@@ -1,0 +1,6 @@
+{
+  "name": "CareBridge AI",
+  "description": "Davolanish tugasa ham, nazorat davom etadi — Shifoxona va klinikalar uchun davolanishdan keyingi bemor kuzatuvi va oilaviy shifokor koordinatsiyasi platformasi.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

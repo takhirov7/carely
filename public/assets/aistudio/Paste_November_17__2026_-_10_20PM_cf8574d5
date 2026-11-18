@@ -1,0 +1,1921 @@
+# CAREBRIDGE AI — COMPLETE FULL-STACK MVP DEVELOPMENT PROMPT
+## Build a Premium AI-Powered Healthcare SaaS Platform
+### Google AI Studio Build Mode
+
+# 1. YOUR ROLE
+
+You are an elite senior full-stack engineer, healthcare SaaS architect, AI engineer, UX/UI designer, database architect, and product manager.
+
+Build a complete, beautifully designed, interactive and functional full-stack healthcare web application called:
+
+**CareBridge AI**
+
+Tagline:
+
+**"Davolanish tugasa ham, nazorat davom etadi."**
+
+English tagline:
+
+**"From Treatment to Recovery. Connected Care."**
+
+This product is being developed for the National AI Hackathon Uzbekistan 2026, Healthcare Track, Official Challenge #11 — Continuity of Care.
+
+IMPORTANT:
+
+I do not want just a landing page, prototype illustration, or static design.
+
+I want an actual working, database-backed, multi-user SaaS MVP with real navigation, functional dashboards, patient profiles, doctor profiles, medical follow-up workflows, reminders, AI functionality, and realistic demonstration data.
+
+The entire product should look like a premium, modern, venture-backed HealthTech SaaS startup.
+
+Build the application directly. Do not only provide explanations or a development plan.
+
+Do not ask unnecessary questions. Make reasonable technical decisions and implement them.
+
+---
+
+# 2. PRODUCT VISION
+
+CareBridge AI is an AI-powered post-treatment patient monitoring and care coordination platform.
+
+It connects:
+
+- Hospitals
+- Private clinics
+- Treating doctors
+- Territorial family doctors
+- Patients
+- Authorized family caregivers
+
+The core problem:
+
+After patients leave hospitals or complete medical procedures, their treatment-related monitoring may become fragmented.
+
+Doctors may not receive structured updates about patient-reported symptoms, medication confirmations, or follow-up needs.
+
+Patients may forget medications, miss follow-up appointments, or struggle to communicate changes in their condition.
+
+CareBridge AI creates a structured monitoring workflow after treatment.
+
+## MAIN OBJECTIVE
+
+Make post-treatment patient follow-up organized, accessible, documented, and easier for healthcare professionals to manage.
+
+## FIVE CORE PRODUCT CAPABILITIES
+
+1. Automatic post-discharge doctor assignment and follow-up tracking.
+2. Medication scheduling, SMS reminders and intake confirmation tracking.
+3. Daily patient health check-ins and symptom reporting.
+4. Optional AI voice follow-up and intelligent patient communication.
+5. Doctor dashboards with patient histories, AI summaries, trends and follow-up management.
+
+## IMPORTANT CLINICAL POSITIONING
+
+CareBridge AI is a healthcare workflow-support product, NOT an autonomous medical decision-maker.
+
+It does not diagnose illnesses, prescribe medications, determine that a patient is recovering, or replace a licensed doctor.
+
+Every clinical decision remains with qualified medical professionals.
+
+---
+
+# 3. TECHNOLOGY STACK
+
+Build a modern full-stack web application.
+
+Preferred frontend:
+
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide icons
+- Recharts for data visualization
+- shadcn/ui-style reusable components
+- Responsive routing and layouts
+
+Backend:
+
+- Use Google AI Studio's supported server-side runtime.
+- Implement secure server-side APIs and business logic.
+- Validate all user inputs.
+- Keep private keys and AI credentials on the server.
+
+Database and Authentication:
+
+- Prefer Firebase Authentication and Cloud Firestore using Google AI Studio's supported Firebase integration.
+- Request setup approval where required.
+- Create persistent application data models.
+- Implement proper organization isolation and role-based access.
+
+If Firebase is not yet connected:
+
+- Keep the UI and workflows fully functional using an isolated synthetic demo data adapter.
+- Clearly label the environment as Demo Mode.
+- Implement repository/service interfaces to allow switching to Firestore.
+- Never pretend that demo login is real authentication.
+- Do not use browser localStorage as secure medical-record storage.
+
+AI:
+
+- Use the Gemini API through server-side services.
+- Use Gemini to summarize fictional patient-reported information and power a constrained AI patient assistant.
+- Use a deterministic fallback when AI is unavailable.
+
+Timezone:
+
+**Asia/Tashkent (UTC+05:00)**
+
+Display dates and times consistently in Uzbekistan local time.
+
+Use server timestamps for persistence.
+
+Architecture requirements:
+
+- Clean modular folder structure
+- Reusable React components
+- Strong TypeScript types
+- Functional API routes
+- Centralized error handling
+- Loading and empty states
+- Accessible forms
+- Mobile-responsive design
+- No hardcoded production secrets
+
+---
+
+# 4. BRAND IDENTITY AND DESIGN SYSTEM
+
+## Product Name
+
+CareBridge AI
+
+## Design Direction
+
+Premium medical technology platform inspired by:
+
+- Linear
+- Modern enterprise SaaS dashboards
+- Apple-level visual simplicity
+- High-quality hospital management software
+- Contemporary HealthTech products
+
+The application should feel credible enough to demonstrate to hospital directors and healthcare investors.
+
+## Color Palette
+
+Primary Blue: #1769E0
+
+Deep Navy: #10243A
+
+Healthcare Teal: #12B8A6
+
+Background: #F7FAFC
+
+White: #FFFFFF
+
+Primary Text: #152238
+
+Muted Text: #64748B
+
+Success Green: #16A34A
+
+Warning Amber: #F59E0B
+
+Critical Red: #DC2626
+
+Use color purposefully.
+
+Do not overload the interface with gradients.
+
+## Typography
+
+Use Inter or Manrope.
+
+Create a sophisticated visual hierarchy with clear headings and readable body text.
+
+## Layout
+
+Desktop:
+
+- Fixed collapsible left sidebar
+- Modern top navigation bar
+- Search
+- Notifications
+- Profile dropdown
+- Cards, tables, charts and timelines
+- Responsive content area
+
+Mobile:
+
+- Compact dashboard
+- Mobile-friendly navigation
+- Large tap targets
+- Simplified patient interaction screens
+- No horizontal overflow
+- No broken tables
+
+## UI REQUIREMENTS
+
+Use:
+
+- Rounded cards
+- Subtle shadows
+- Attractive empty states
+- Skeleton loaders
+- Confirmation dialogs
+- Toast notifications
+- Status badges
+- Search and filter components
+- Dropdowns
+- Date and time pickers
+- Tabs
+- Progress charts
+- Interactive patient tables
+
+Every visible button must perform a real action or clearly indicate that its integration is not yet available.
+
+Do not create decorative buttons that do nothing.
+
+## LANGUAGE
+
+The entire interface must default to:
+
+**Uzbek — Latin alphabet**
+
+Use professional and grammatically correct Uzbek.
+
+Examples:
+
+Dashboard → Boshqaruv paneli
+
+Patients → Bemorlar
+
+Doctors → Shifokorlar
+
+Appointments → Uchrashuvlar
+
+Medications → Dorilar
+
+Monitoring → Kuzatuv
+
+Reports → Hisobotlar
+
+Settings → Sozlamalar
+
+Notifications → Bildirishnomalar
+
+Sign Out → Chiqish
+
+Optional future language support:
+
+- Russian
+- English
+
+But prioritize a polished and consistent Uzbek interface.
+
+---
+
+# 5. USER ROLES AND ACCESS CONTROL
+
+Build a proper multi-role SaaS platform.
+
+## ROLE A — PLATFORM SUPER ADMIN
+
+The platform administrator manages organizations and demo infrastructure.
+
+Capabilities:
+
+- View registered healthcare organizations
+- Create or approve clinic organizations
+- Manage organization status
+- See aggregated operational metrics
+- Assign clinic administrators
+- View audit logs and system health
+
+The super admin must not automatically browse private patient medical details without an explicit authorized clinical or support workflow.
+
+## ROLE B — CLINIC / HOSPITAL ADMIN
+
+Each organization must have its own dashboard.
+
+Capabilities:
+
+- Manage the clinic profile
+- Add doctors and staff
+- Invite approved users
+- Assign staff roles
+- Manage departments
+- View organization-level operational statistics
+- View follow-up completion metrics
+- Configure notification settings
+- Manage clinic subscription information
+
+Non-clinical administrators should not automatically access sensitive clinical notes.
+
+## ROLE C — TREATING DOCTOR
+
+Doctors have personalized accounts.
+
+Capabilities:
+
+- Manage their professional profile
+- View their authorized patients
+- Add patients or initiate follow-up cases
+- Create clinician-approved treatment follow-up plans
+- Define medication schedules
+- Review daily patient reports
+- View patient-reported symptoms
+- Review medication confirmation history
+- Receive notifications requiring review
+- Generate AI-assisted patient summaries
+- Write clinical notes
+- Update follow-up plans
+- Close or archive completed monitoring cases
+
+## ROLE D — TERRITORIAL FAMILY DOCTOR
+
+The family doctor receives relevant hospital discharge follow-up tasks.
+
+Capabilities:
+
+- View assigned post-discharge cases
+- Accept tasks
+- View available authorized discharge information
+- Contact patients
+- Record first follow-up results
+- Confirm that follow-up was completed
+- View follow-up deadlines
+- Review patient-reported check-ins where authorized
+- Escalate cases to appropriate clinical staff
+
+The 24-hour follow-up task is especially important for official Hackathon Challenge #11.
+
+## ROLE E — NURSE / CARE COORDINATOR
+
+Capabilities:
+
+- Manage authorized patient communication
+- Review unanswered check-ins
+- Assist with follow-up scheduling
+- Prepare follow-up notes
+- Contact patients under approved workflows
+- Flag cases for physician review
+
+Nurses must not independently alter prescriptions unless legally and professionally authorized.
+
+## ROLE F — PATIENT
+
+Patients need a simple mobile-friendly interface.
+
+Capabilities:
+
+- View their approved follow-up plan
+- View medication schedule
+- Confirm reported medication intake
+- Answer daily symptom questions
+- View upcoming appointments
+- Request contact from a healthcare professional
+- Review permitted personal reports
+- Configure communication preferences
+- Manage consent where applicable
+
+## ROLE G — AUTHORIZED CAREGIVER
+
+Optional caregiver accounts.
+
+Capabilities:
+
+- View only information explicitly shared by the patient
+- Receive approved alerts
+- Help coordinate reminders
+- Contact the care team through permitted channels
+
+A caregiver cannot access everything in the patient's medical record by default.
+
+## ROLE-BASED SECURITY
+
+Implement organization-level data isolation.
+
+A doctor at Clinic A must never access Clinic B's patient data without appropriate authorization.
+
+Use secure backend checks and Firestore security rules where applicable.
+
+Do not rely only on hiding UI elements.
+
+---
+
+# 6. AUTHENTICATION, ONBOARDING AND DEMO MODE
+
+## LOGIN PAGE
+
+Create a premium login page.
+
+Layout:
+
+Left side:
+- CareBridge AI logo
+- Short tagline
+- Minimal healthcare illustration
+- Product benefits
+
+Right side:
+- Login form
+- Email authentication or Google sign-in where supported
+- Forgot-password functionality where configured
+- Professional login states
+
+## REAL ACCOUNT ACCESS
+
+Use Firebase Authentication.
+
+Roles and organization membership must be assigned securely.
+
+Do not allow a newly registered user to self-select Super Admin or Doctor and automatically gain access to private patient records.
+
+Doctor and clinic accounts require an authorized invitation or administrative approval.
+
+## DEMO MODE
+
+Because this is a three-day hackathon, create a prominent Demo Mode that is separate from real authentication.
+
+Provide fictional demo personas:
+
+- Platform Admin
+- Hospital Admin
+- Treating Doctor
+- Family Doctor
+- Nurse
+- Patient
+
+Allow switching demo personas to show different dashboards.
+
+All demo personas must use synthetic data.
+
+Display a clear badge:
+
+"Demo rejimi — sun'iy ma'lumotlar"
+
+Demo role switching must be available only inside the isolated demo environment.
+
+Never treat demo role switching as real authorization.
+
+---
+
+# 7. CLINIC AND HOSPITAL MANAGEMENT
+
+Create an organization management module.
+
+## CLINIC PROFILE
+
+Fields:
+
+- Clinic name
+- Logo
+- Clinic type
+- Region
+- District
+- Address
+- Contact phone
+- Email
+- Description
+- Departments
+- Operating hours
+- Assigned doctors
+- Active monitoring patients
+
+Clinic types:
+
+- General hospital
+- Private clinic
+- Dental clinic
+- Surgical clinic
+- Cardiology clinic
+- Other specialty clinic
+
+## ORGANIZATION DASHBOARD
+
+Display:
+
+- Total authorized staff
+- Total monitoring cases
+- Active follow-ups
+- Follow-ups due within 24 hours
+- Overdue follow-up tasks
+- Completed follow-ups
+- Patient response rates
+
+Use interactive charts.
+
+Include filters:
+
+- Today
+- Last 7 days
+- Last 30 days
+- Custom date range
+
+Every metric must be calculated from actual saved demo or database records, not hardcoded display-only numbers.
+
+## STAFF MANAGEMENT
+
+Allow the clinic administrator to:
+
+- Invite a doctor
+- Assign a department
+- Set a role
+- Activate or deactivate a staff account
+- View staff workload
+- Assign follow-up responsibilities
+
+Include confirmation dialogs and validation.
+
+---
+
+# 8. DOCTOR PROFILE SYSTEM — VERY IMPORTANT
+
+Every doctor must have a complete personal profile.
+
+This is one of the most important parts of the MVP.
+
+## DOCTOR PROFILE FIELDS
+
+- Profile photo or default medical avatar
+- Full name
+- Specialty
+- Professional title
+- Organization
+- Department
+- Professional license identifier, if provided
+- Years of experience
+- Professional biography
+- Phone and work email
+- Work schedule
+- Assigned patients
+- Active cases
+- Follow-up tasks
+- Completed follow-ups
+
+Use fictional data in the demo.
+
+## DOCTOR PROFILE PAGE
+
+Create a visually impressive page containing:
+
+### Section A — Personal Information
+
+Photo, name, specialty, clinic and contact details.
+
+### Section B — My Patients
+
+Searchable table of patients assigned to this doctor.
+
+### Section C — Active Monitoring
+
+Cards displaying active follow-up cases.
+
+### Section D — Follow-Up Performance
+
+Charts:
+
+- Follow-ups completed
+- Pending tasks
+- Overdue tasks
+- Patient check-in response rates
+
+### Section E — My Schedule
+
+Upcoming appointments and follow-up deadlines.
+
+### Section F — Profile Settings
+
+Allow editing permitted profile information.
+
+## DOCTOR DASHBOARD SIDEBAR
+
+Include:
+
+- Boshqaruv paneli
+- Mening bemorlarim
+- Kuzatuvlar
+- Dori jadvali
+- Bemor xabarlari
+- AI Hisobotlar
+- Uchrashuvlar
+- Mening profilim
+- Sozlamalar
+
+All sections must work.
+
+---
+
+# 9. PATIENT MANAGEMENT SYSTEM
+
+Build a complete patient management module.
+
+## PATIENT PROFILE
+
+Every patient has a structured profile.
+
+Fields:
+
+- Unique patient ID
+- Full name
+- Date of birth or age
+- Sex, where clinically relevant and authorized
+- Contact phone
+- Region and district
+- Assigned clinic
+- Treating doctor
+- Responsible family doctor, when applicable
+- Care case type
+- Discharge or procedure date
+- Follow-up schedule
+- Medication plan
+- Patient-reported health updates
+- Communication preferences
+- Consent records
+- Case status
+
+Do not require unnecessary sensitive data.
+
+## PATIENT LIST PAGE
+
+Create a premium data table.
+
+Columns:
+
+- Patient
+- Assigned doctor
+- Treatment type
+- Last check-in
+- Medication confirmation status
+- Follow-up deadline
+- Case status
+- Action
+
+Features:
+
+- Search
+- Filter by doctor
+- Filter by status
+- Filter by department
+- Sort
+- Pagination
+- Add patient
+- Open profile
+- Edit permitted information
+- Archive case
+
+## PATIENT DETAIL PAGE
+
+Create a beautiful, detailed profile page.
+
+Tabs:
+
+1. Umumiy ma'lumot
+2. Davolanish rejasi
+3. Dori jadvali
+4. Kunlik holat
+5. AI muloqotlar
+6. Shifokor qaydlari
+7. Kuzatuv tarixi
+
+## PATIENT TIMELINE
+
+Show chronological events:
+
+- Patient registered
+- Discharged from hospital
+- Family doctor assigned
+- Medication reminder sent
+- Patient confirmed medication intake
+- Daily check-in submitted
+- AI call completed
+- Doctor reviewed case
+- Follow-up completed
+
+Events should have real timestamps in the system.
+
+---
+
+# 10. OFFICIAL CHALLENGE #11 — AUTOMATIC POST-DISCHARGE FOLLOW-UP
+
+This is the MOST IMPORTANT workflow for hackathon alignment.
+
+Build a fully functional post-discharge task management system.
+
+## HOSPITAL WORKFLOW
+
+When hospital staff select:
+
+**"Bemorni uyga chiqarish"**
+
+Open a form containing:
+
+- Patient
+- Hospital
+- Treating doctor
+- Discharge timestamp
+- Relevant discharge instructions
+- Patient's district
+- Assigned territorial family doctor
+- Follow-up priority defined by authorized clinical staff
+- First follow-up deadline
+
+## AUTOMATIC TASK CREATION
+
+When discharge is confirmed:
+
+1. Save the discharge event.
+2. Create a post-discharge monitoring case.
+3. Identify the responsible family doctor from authorized organization mappings.
+4. Create a follow-up task.
+5. Set deadline to discharge timestamp + 24 hours.
+6. Notify the assigned family doctor.
+7. Log the action in the audit timeline.
+8. Display the task in the family doctor's dashboard.
+
+If a doctor cannot be identified:
+
+- Set status to "Biriktirilmagan".
+- Place the task in an administrative assignment queue.
+- Notify authorized coordination staff.
+- Do not invent an assigned doctor.
+
+## FOLLOW-UP TASK STATUS
+
+Use states:
+
+- Yangi
+- Qabul qilindi
+- Jarayonda
+- Bajarildi
+- Muddati o‘tgan
+- Qayta biriktirish kerak
+
+## FAMILY DOCTOR ACTIONS
+
+The doctor can:
+
+- Accept task
+- View relevant patient details
+- Record patient contact
+- Record contact method
+- Add follow-up notes
+- Request further review
+- Complete the follow-up
+
+The doctor's actual follow-up must be recorded.
+
+An AI call or SMS does not count as physician completion.
+
+## DEADLINE TRACKING
+
+Display a live 24-hour countdown.
+
+If the deadline passes without completed physician follow-up:
+
+- Mark the task as overdue.
+- Notify authorized supervisors.
+- Keep the task visible until resolved.
+
+Use persistent server timestamps.
+
+Do not depend solely on an open browser tab.
+
+## PRIVATE CLINIC WORKFLOW
+
+Also support a separate workflow:
+
+"Post-Procedure Follow-Up"
+
+Example:
+
+A dentist treats a patient and schedules follow-up check-ins.
+
+The treating dentist can monitor that patient directly.
+
+This private clinic workflow is separate from the official hospital-to-territorial-family-doctor workflow.
+
+---
+
+# 11. MEDICATION TRACKER
+
+Create a complete functional medication schedule and confirmation system.
+
+## MEDICATION PLAN CREATION
+
+An authorized doctor or clinician can create a medication plan.
+
+Fields:
+
+- Medication name
+- Strength
+- Form
+- Prescribed dose
+- Frequency
+- Scheduled administration times
+- Start date
+- End date
+- Clinician-approved instructions
+- Status
+
+Example:
+
+Medication A — 09:00
+
+Medication B — 14:00
+
+Medication C — 21:00
+
+These are fictional demonstration medicines and times.
+
+## PATIENT MEDICATION VIEW
+
+Display:
+
+- Today's medication schedule
+- Next scheduled medication time
+- Medication history
+- Daily confirmation progress
+- Upcoming reminders
+
+## PATIENT CONFIRMATION BUTTONS
+
+- Ichdim
+- Keyinroq
+- O‘tkazib yubordim
+
+## IMPORTANT TRACKING LOGIC
+
+When the patient selects "Ichdim":
+
+Store a patient-reported intake confirmation.
+
+When the patient selects "O‘tkazib yubordim":
+
+Store a patient-reported missed dose.
+
+When the patient does not respond:
+
+Store "Tasdiqlanmagan".
+
+Never automatically claim the medication was actually taken.
+
+Never advise the patient to double a missed dose.
+
+## MEDICATION ANALYTICS
+
+Doctor dashboard should display:
+
+- Total scheduled medication events
+- Patient-reported taken events
+- Patient-reported missed events
+- Unconfirmed events
+- Daily and weekly trends
+
+Do not label self-reported medication intake as medically verified adherence.
+
+---
+
+# 12. SMART NOTIFICATION SYSTEM — SMS AND REMINDERS
+
+Create a notification engine.
+
+## NOTIFICATION TYPES
+
+- Medication reminder
+- Follow-up appointment reminder
+- Daily health check-in
+- Doctor follow-up task
+- Patient requests clinician contact
+- Overdue follow-up alert
+- AI voice follow-up notification
+
+## DEMO MODE
+
+Since real SMS provider credentials may not be configured:
+
+Create a fully functional SMS Simulation Center.
+
+When a notification is triggered:
+
+- Save the event.
+- Display the generated SMS content.
+- Mark the message as simulated.
+- Update its status.
+- Show it in the patient's demo inbox.
+- Add the notification to the activity timeline.
+
+Create a "Send Test Reminder" button.
+
+It must actually trigger the simulated notification workflow.
+
+## FUTURE REAL SMS INTEGRATION
+
+Use a provider adapter interface.
+
+Include server-side configuration placeholders for an approved Uzbekistan SMS gateway.
+
+Do not hardcode API credentials.
+
+Never claim a real SMS was delivered if it was only simulated.
+
+## REMINDER ESCALATION
+
+Default demonstration sequence:
+
+09:00 — First notification
+
+09:15 — Follow-up reminder, if unanswered
+
+09:30 — Optional AI call, if consented
+
+Later — Optional caregiver notification, if authorized
+
+These intervals are configurable product examples, not clinical dosing guidance.
+
+## NOTIFICATION PREFERENCES
+
+Users must be able to:
+
+- Enable or disable push notifications
+- Opt in or out of SMS
+- Opt in or out of AI voice calls
+- Configure quiet hours
+- Configure caregiver notifications
+- Review notification history
+
+---
+
+# 13. AI VOICE AGENT — IMPORTANT INNOVATION
+
+Create an AI Patient Follow-Up Agent.
+
+The agent communicates naturally in Uzbek.
+
+Its purpose is:
+
+- Reminding patients about scheduled medication
+- Asking whether a reminder was acknowledged
+- Collecting simple patient-reported symptoms
+- Asking if the patient would like contact from a clinician
+- Recording structured responses
+- Sending appropriate information to authorized doctors
+
+## EXAMPLE CONVERSATION
+
+AI:
+
+"Assalomu alaykum! Men CareBridge virtual yordamchisiman. Sizga dori qabul qilish bo‘yicha eslatma yuborilgan edi. Dorini qabul qilganingizni tasdiqlaysizmi?"
+
+Patient:
+
+"Ha, ichdim."
+
+AI:
+
+"Rahmat. Tasdiqingiz qayd etildi."
+
+## DAILY CHECK-IN EXAMPLE
+
+AI:
+
+"Bugun o‘zingizni qanday his qilyapsiz?"
+
+Patient:
+
+"Yaxshi, lekin biroz og‘riq bor."
+
+AI:
+
+"Javobingiz uchun rahmat. Shifokoringiz bilan bog‘lanishni xohlaysizmi?"
+
+Patient:
+
+"Ha."
+
+AI:
+
+"So‘rovingiz tibbiyot xodimiga yuboriladi."
+
+## TECHNICAL IMPLEMENTATION
+
+Create a structured AI agent service.
+
+Use Gemini through the server.
+
+Support:
+
+- Structured conversation state
+- Approved Uzbek scripts
+- Patient response extraction
+- Response summaries
+- Safe fallback messages
+- Audit logging
+- Doctor review requests
+
+For the hackathon demo:
+
+Create an in-app interactive Voice Agent Simulator.
+
+The user can:
+
+- Start a simulated call
+- View the call transcript
+- Type a spoken response
+- Optionally use supported microphone and speech features
+- See AI replies
+- End the call
+- View the saved call summary
+
+If speech APIs are unavailable, keep the text-driven call simulation fully functional.
+
+Real phone calling should be a separate future adapter requiring an authorized telephony provider and explicit patient consent.
+
+Do not simulate a real outbound call while claiming that a phone network connection occurred.
+
+## MEDICAL SAFETY
+
+The agent must never:
+
+- Diagnose disease
+- Prescribe medication
+- Modify a dose
+- Recommend unapproved treatment
+- Confirm that a patient is medically recovered
+- Invent clinical recommendations
+
+If the patient describes potentially urgent symptoms, the agent should direct the patient toward appropriate urgent medical assistance and flag the communication according to a medically reviewed escalation workflow.
+
+The AI must identify itself as an AI assistant.
+
+---
+
+# 14. DAILY PATIENT HEALTH CHECK-IN
+
+Build a structured daily health questionnaire system.
+
+## CHECK-IN QUESTIONS
+
+For the general demo:
+
+1. "Bugun o‘zingizni qanday his qilyapsiz?"
+2. "Og‘riq darajangiz 0 dan 10 gacha nechchi?"
+3. "Yangi shikoyatingiz bormi?"
+4. "Shifokor bilan bog‘lanishni xohlaysizmi?"
+
+Allow the clinician to configure approved questions by specialty.
+
+## RESPONSE TYPES
+
+- Multiple choice
+- Numerical pain scale
+- Yes / No
+- Short text
+- Optional structured patient-entered measurements
+
+## CHECK-IN STATUS
+
+- Kutilmoqda
+- Javob berildi
+- Tasdiqlanmagan
+- Shifokor ko‘rishi kerak
+
+## DOCTOR ANALYTICS
+
+Show:
+
+- Daily pain scores
+- New reported complaints
+- Response frequency
+- Unanswered check-ins
+- Requests for contact
+
+Create graphs using actual stored entries.
+
+Do not autonomously label patients as healthy, recovered, deteriorating, or high risk based solely on unvalidated AI inference.
+
+Where a patient requests help or a clinician-approved safety rule is triggered, create a "Shifokor ko‘rishi kerak" task.
+
+---
+
+# 15. AI PATIENT ANALYTICS AND SUMMARY GENERATION
+
+Build an AI-assisted doctor reporting feature.
+
+## DOCTOR ACTION
+
+On the patient detail page, include a button:
+
+**"AI hisobot yaratish"**
+
+When clicked:
+
+The application reads the patient's authorized existing records and creates a concise summary.
+
+## REPORT STRUCTURE
+
+- Reporting period
+- Medication confirmation summary
+- Daily check-in responses
+- Pain score trend
+- New patient-reported complaints
+- Follow-up appointment status
+- Unanswered notifications
+- Requests for doctor contact
+- Items requiring manual review
+
+## IMPORTANT
+
+Clearly mark reports:
+
+"AI tomonidan tayyorlangan loyiha — shifokor tekshirishi kerak."
+
+AI may summarize existing records but must not fabricate measurements, diagnoses, treatments or symptoms.
+
+Each factual statement should be traceable to an existing timestamped patient entry.
+
+Allow the doctor to:
+
+- Review the report
+- Edit permitted notes
+- Save a reviewed version
+- Mark review completed
+- Export a PDF if the environment supports it
+
+Do not expose information from patients the doctor is not authorized to view.
+
+---
+
+# 16. COMPLETE DOCTOR DASHBOARD
+
+Create a beautiful and functional dashboard.
+
+## HEADER
+
+Welcome message:
+
+"Xush kelibsiz, doktor!"
+
+Show doctor photo, name, specialty and organization.
+
+## KPI CARDS
+
+- Aktiv bemorlar
+- Bugungi kuzatuvlar
+- Javob kutilayotganlar
+- Shifokor ko‘rishi kerak
+- Bajarilgan kuzatuvlar
+
+## MAIN SECTIONS
+
+### Patient Monitoring Table
+
+Columns:
+
+- Patient name
+- Condition / procedure
+- Last check-in
+- Medication confirmation
+- Follow-up deadline
+- Status
+- Action
+
+### Medication Confirmation Chart
+
+Weekly patient-reported medication confirmations.
+
+### Patient Health Reports
+
+Recent patient-reported symptoms and check-ins.
+
+### AI Call Activity
+
+Recent simulated or actual, clearly distinguished AI conversations.
+
+### Upcoming Follow-Ups
+
+Calendar and list of pending physician tasks.
+
+### Doctor Task Center
+
+Priority inbox for:
+
+- New assigned cases
+- Overdue tasks
+- Patient contact requests
+- Check-ins requiring review
+
+## DASHBOARD INTERACTIONS
+
+Every card should be clickable where appropriate.
+
+Clicking a patient opens the detailed patient profile.
+
+Clicking a task opens the task details.
+
+Changing status should update saved data.
+
+Charts should refresh after the underlying records change.
+
+---
+
+# 17. PRIVATE CLINIC SPECIALTY MODULES
+
+CareBridge AI should support multiple healthcare specialties using the same core infrastructure.
+
+## DENTISTRY
+
+Example workflow:
+
+Patient completes a dental procedure.
+
+The dentist starts a follow-up plan.
+
+The platform sends check-in reminders.
+
+Patient reports pain level and concerns.
+
+Dentist reviews the responses.
+
+## SURGERY
+
+Example workflow:
+
+Patient is discharged after surgery.
+
+The doctor or authorized care team creates a follow-up plan.
+
+The patient receives approved instructions, appointment reminders and check-in requests.
+
+The doctor reviews submitted information.
+
+## CARDIOLOGY
+
+Example workflow:
+
+The patient follows a clinician-approved medication schedule.
+
+The platform reminds the patient and records patient-entered measurements, where applicable.
+
+The doctor reviews the recorded information.
+
+## GENERAL MEDICINE
+
+Example workflow:
+
+A hospital discharge creates a territorial family-doctor follow-up task with a 24-hour deadline.
+
+## TEMPLATE SYSTEM
+
+Allow authorized administrators or clinicians to create specialty-specific follow-up templates.
+
+A template can include:
+
+- Duration
+- Reminder schedule
+- Approved questions
+- Follow-up appointments
+- Patient instructions
+- Escalation instructions
+
+Templates must be clinician-reviewed before use in real patient care.
+
+---
+
+# 18. DATABASE STRUCTURE
+
+Design the database for multi-tenant healthcare SaaS.
+
+Use collections or equivalent models for:
+
+## users
+
+Fields:
+
+- id
+- authUid
+- fullName
+- email
+- role
+- organizationMemberships
+- avatarUrl
+- status
+- createdAt
+- updatedAt
+
+## organizations
+
+- id
+- name
+- type
+- region
+- district
+- address
+- contact
+- subscriptionPlan
+- status
+- createdAt
+
+## doctorProfiles
+
+- id
+- userId
+- organizationId
+- specialty
+- department
+- professionalTitle
+- biography
+- licenseIdentifier
+- workSchedule
+- createdAt
+
+## patients
+
+- id
+- organizationId
+- fullName
+- dateOfBirth
+- contact
+- region
+- district
+- consentStatus
+- createdAt
+
+## careCases
+
+- id
+- patientId
+- organizationId
+- treatingDoctorId
+- familyDoctorId
+- careType
+- dischargeAt
+- followUpDeadlineAt
+- caseStatus
+- startedAt
+- endedAt
+
+## followUpTasks
+
+- id
+- careCaseId
+- assignedDoctorId
+- createdAt
+- dueAt
+- acceptedAt
+- completedAt
+- status
+- notes
+
+## medicationPlans
+
+- id
+- careCaseId
+- patientId
+- approvedByDoctorId
+- medicationName
+- dosageInstructions
+- scheduledTimes
+- startDate
+- endDate
+- status
+
+## medicationEvents
+
+- id
+- medicationPlanId
+- scheduledAt
+- respondedAt
+- reportedStatus
+- notificationStatus
+
+## dailyCheckIns
+
+- id
+- careCaseId
+- patientId
+- scheduledAt
+- submittedAt
+- painScore
+- reportedSymptoms
+- requestedDoctorContact
+- reviewStatus
+
+## notifications
+
+- id
+- recipientId
+- channel
+- notificationType
+- message
+- status
+- isSimulation
+- createdAt
+- deliveredAt
+
+## aiConversations
+
+- id
+- careCaseId
+- patientId
+- conversationType
+- transcript
+- structuredSummary
+- isSimulation
+- createdAt
+
+## aiReports
+
+- id
+- careCaseId
+- generatedBy
+- periodStart
+- periodEnd
+- summary
+- sourceEventIds
+- clinicianReviewStatus
+- createdAt
+
+## consents
+
+- id
+- patientId
+- consentType
+- grantedAt
+- withdrawnAt
+- scope
+
+## auditLogs
+
+- id
+- actorId
+- organizationId
+- action
+- entityType
+- entityId
+- timestamp
+
+Design relationships, indexes and security rules appropriately.
+
+All relationships must use stable IDs.
+
+Avoid unnecessary duplication of sensitive patient information.
+
+---
+
+# 19. REALISTIC DEMO DATA
+
+Create meaningful fictional demo data.
+
+The demo should feel like an active healthcare platform.
+
+## DEMO ORGANIZATIONS
+
+- CareBridge Demo Hospital
+- Tashkent Family Clinic Demo
+- CareBridge Dental Demo Clinic
+
+These are fictional organizations.
+
+## DEMO STAFF
+
+Create fictional personas:
+
+- Hospital Administrator
+- Hospital Treating Doctor
+- Territorial Family Doctor
+- Dentist
+- Nurse / Care Coordinator
+
+Provide complete doctor profiles.
+
+## DEMO PATIENTS
+
+Create at least 12 fictional patients.
+
+Distribute them across:
+
+- Post-hospital follow-up
+- Dental procedure follow-up
+- General clinical follow-up
+- Long-term medication monitoring
+
+Use fictional names and phone numbers that cannot accidentally reach real people.
+
+## DEMO RECORDS
+
+Seed:
+
+- Active follow-up cases
+- Completed tasks
+- Overdue tasks
+- Medication schedules
+- Patient-reported confirmations
+- Daily symptom reports
+- AI conversation transcripts
+- Notifications
+- AI reports
+- Audit timeline events
+
+All seeded data must be marked synthetic.
+
+## DEMO INTERACTIVITY
+
+A reviewer should be able to:
+
+1. Open the hospital dashboard.
+2. Discharge a fictional patient.
+3. See a family-doctor task automatically created.
+4. Switch to the family-doctor demo role.
+5. Accept the task.
+6. Open the patient profile.
+7. Trigger a simulated medication reminder.
+8. Switch to the patient view.
+9. Submit a medication confirmation.
+10. Submit a daily health check-in.
+11. Trigger an AI follow-up simulation.
+12. Return to the doctor dashboard.
+13. Review the newly submitted patient information.
+14. Generate an AI summary.
+15. Complete the follow-up task.
+16. See the dashboard analytics update.
+
+This must be a connected, working demo, not separate unrelated screens.
+
+---
+
+# 20. DEMO CONTROL CENTER
+
+Create a special page visible in Demo Mode:
+
+**"Hackathon Demo Center"**
+
+This page is extremely important.
+
+Include buttons:
+
+- Demo bemor yaratish
+- Bemorni uyga chiqarish
+- Oilaviy shifokorga topshiriq yuborish
+- SMS eslatmani ishga tushirish
+- Bemor javobini simulyatsiya qilish
+- AI qo‘ng‘iroqni boshlash
+- Kunlik check-in yuborish
+- Shifokor hisobotini yaratish
+- Kuzatuvni yakunlash
+- Demo ma'lumotlarni tiklash
+
+Provide an optional demo clock to advance simulated time without waiting for real reminders.
+
+Simulated time progression must be clearly labeled and must not modify actual server time.
+
+Create a clean progress indicator showing the current step of the demonstration.
+
+Use a preconfigured fictional patient so the complete demo can be presented in under three minutes.
+
+---
+
+# 21. SUBSCRIPTION AND BILLING UI
+
+CareBridge AI is a B2B SaaS platform.
+
+Create a subscription management interface.
+
+## STARTER
+
+Illustrative price:
+
+499,000 UZS / month
+
+Features:
+
+- Small clinic dashboard
+- Limited staff accounts
+- Patient follow-up management
+- Medication tracking
+- Basic notifications
+
+## PRO
+
+Illustrative price:
+
+1,499,000 UZS / month
+
+Features:
+
+- More staff accounts
+- Daily patient monitoring
+- AI summaries
+- AI call allowance
+- Advanced analytics
+
+## ENTERPRISE
+
+Custom pricing.
+
+Features:
+
+- Multi-department support
+- Custom integrations
+- Dedicated onboarding
+- Advanced security configuration
+- Enterprise reporting
+
+These prices are hypotheses, not validated commercial prices.
+
+Do not implement real payment processing unless an approved payment provider is connected.
+
+The billing page should clearly say:
+
+"Demo tariflar — to‘lov tizimi hali ulanmagan."
+
+Show:
+
+- Current plan
+- Plan limits
+- Usage summary
+- Upgrade preview
+- Billing history placeholder clearly labeled as demo
+
+No fake successful payments.
+
+---
+
+# 22. SETTINGS AND ACCOUNT MANAGEMENT
+
+## USER SETTINGS
+
+- Profile details
+- Language preference
+- Notification preferences
+- Security settings
+- Password and authentication settings, where supported
+- Communication consent
+- AI calling preference
+- Theme selection
+- Sign out
+
+## CLINIC SETTINGS
+
+- Clinic information
+- Departments
+- Staff roles
+- Default follow-up workflows
+- Notification configuration
+- Subscription plan
+- Data access permissions
+
+## PATIENT SETTINGS
+
+- Contact information
+- Notification channels
+- Quiet hours
+- Consent for AI calls
+- Authorized caregiver access
+- Data sharing preferences
+
+Implement validation and save changes persistently.
+
+---
+
+# 23. SECURITY, PRIVACY AND HEALTHCARE SAFETY
+
+This is a healthcare product.
+
+Security and safety are essential.
+
+## MANDATORY RULES
+
+- Separate demo data from real user data.
+- Do not use actual patient records in the MVP demo.
+- Require secure authentication for real user accounts.
+- Implement backend authorization.
+- Apply organization-level isolation.
+- Limit access to authorized clinicians.
+- Maintain audit logs for sensitive record actions.
+- Do not expose API keys to frontend code.
+- Do not place health data into public URLs.
+- Avoid displaying private medical details in generic SMS previews.
+- Validate all user inputs.
+- Prevent unauthorized role changes.
+- Protect clinician notes and patient contact information.
+- Design explicit consent controls for AI phone calls.
+- Allow consent withdrawal.
+- Do not send actual calls or messages to unconsenting people.
+- Treat AI summaries as drafts requiring professional review.
+- Never present the prototype as clinically validated.
+- Never claim official government integration without authorization.
+
+Provide reasonable security defaults.
+
+Prepare the app for future compliance review, but do not claim that building this MVP automatically makes it compliant with healthcare regulations.
+
+---
+
+# 24. FUNCTIONAL ACCEPTANCE TESTS
+
+Before declaring the MVP complete, verify these flows.
+
+## TEST 1 — DOCTOR PROFILE
+
+Create or edit a doctor profile.
+
+Save the profile.
+
+Refresh the application.
+
+Verify the changes remain saved.
+
+## TEST 2 — PATIENT CREATION
+
+Create a fictional patient.
+
+Verify the patient appears in the correct organization's patient list.
+
+Open the patient profile.
+
+## TEST 3 — AUTOMATIC FOLLOW-UP
+
+Discharge a fictional hospital patient.
+
+Verify the appropriate family-doctor follow-up task is created.
+
+Verify the correct deadline.
+
+Verify the family doctor sees the task.
+
+## TEST 4 — MEDICATION REMINDER
+
+Create a clinician-approved fictional medication schedule.
+
+Trigger a simulated reminder.
+
+Verify the notification appears in the patient's demo inbox.
+
+Verify it is saved in the notification log.
+
+## TEST 5 — PATIENT CONFIRMATION
+
+Mark a medication event as "Ichdim".
+
+Verify the event changes to patient-reported taken.
+
+Verify doctor dashboard analytics update.
+
+## TEST 6 — DAILY CHECK-IN
+
+Submit a daily patient report.
+
+Verify it is stored.
+
+Verify the authorized doctor sees the new response.
+
+## TEST 7 — AI AGENT
+
+Launch the AI call simulator.
+
+Submit a patient response.
+
+Verify the transcript and summary are saved.
+
+## TEST 8 — DOCTOR FOLLOW-UP COMPLETION
+
+The authorized family doctor completes a follow-up task.
+
+Verify the completion timestamp is saved.
+
+Verify dashboards update.
+
+## TEST 9 — ACCESS CONTROL
+
+A user belonging to Clinic A must not access Clinic B's private patient records.
+
+Verify this is enforced by backend access rules, not only frontend navigation.
+
+## TEST 10 — RESPONSIVE DESIGN
+
+Verify:
+
+- Desktop
+- Tablet
+- Mobile
+
+No clipped text, unusable buttons, broken tables or horizontal overflow.
+
+---
+
+# 25. IMPLEMENTATION PRIORITY
+
+Build the application in the following implementation order while working toward the complete product.
+
+## PHASE 1 — CORE FOUNDATION
+
+Implement:
+
+- App shell
+- Responsive navigation
+- Authentication or isolated Demo Mode
+- Organizations
+- User roles
+- Doctor profiles
+- Patient profiles
+- Persistence layer
+
+Make these fully functional.
+
+## PHASE 2 — OFFICIAL FOLLOW-UP WORKFLOW
+
+Implement:
+
+- Hospital discharge
+- Family-doctor assignment
+- Automatic task creation
+- 24-hour deadline
+- Task status changes
+- Doctor confirmation
+- Operational dashboards
+
+This phase is mandatory for the hackathon.
+
+## PHASE 3 — PATIENT ENGAGEMENT
+
+Implement:
+
+- Medication schedules
+- Medication confirmation
+- Simulated SMS
+- Daily check-ins
+- Patient dashboard
+- Notification history
+
+## PHASE 4 — AI FEATURES
+
+Implement:
+
+- Gemini patient-response summarization
+- AI agent conversation simulation
+- AI doctor reports
+- Structured conversation records
+
+## PHASE 5 — POLISH AND DEMO
+
+Implement:
+
+- Hackathon Demo Center
+- Specialty workflow templates
+- Subscription UI
+- Search and filters
+- Charts and analytics
+- Error and loading states
+- Mobile responsiveness
+- Final QA
+
+If token, time or environment limitations occur, prioritize a functional end-to-end experience through Phase 4 over decorative extras.
+
+Do not replace working functionality with static placeholders.
+
+---
+
+# 26. FINAL EXPECTED RESULT
+
+I want a professional, beautiful, functional CareBridge AI MVP.
+
+When the app opens, I should see a polished healthcare platform, not a generic website.
+
+I should be able to explore:
+
+1. A real application dashboard.
+2. A clinic or hospital account.
+3. Complete doctor profiles.
+4. Patient profiles and monitoring cases.
+5. Automatic doctor follow-up tasks.
+6. Medication schedules and confirmations.
+7. SMS notification simulation.
+8. An interactive AI patient follow-up agent.
+9. Daily patient check-ins.
+10. Doctor analytics and AI summaries.
+11. B2B subscription information.
+12. An integrated Hackathon Demo Center.
+
+The experience must be coherent from start to finish.
+
+All demo information must be clearly labeled fictional.
+
+The product must visually communicate a high level of quality, usability and credibility.
+
+Do not merely describe the features.
+
+**BUILD THE APPLICATION.**
+
+Start by implementing the core full-stack architecture and functional workflows.
+
+Use Google AI Studio's supported tools and integrations where possible.
+
+Create the actual components, routes, data models, server-side functions and UI.
+
+After implementation, review the app, fix obvious errors, and verify the primary demo workflow.
+
+Our goal is to present CareBridge AI as a serious, technically credible and commercially promising Uzbekistan-based HealthTech startup.
+
+**CareBridge AI — Davolanish tugasa ham, nazorat davom etadi.**
